@@ -33,6 +33,12 @@ public class PostController {
         return postService.listPostsByUser(userId);
     }
 
+    @GetMapping("/user/{userId}/count")
+    public ResponseEntity<?> countPostsByUser(@PathVariable String userId){
+        int count = postService.countPostsByUser(userId);
+        return ResponseEntity.ok(java.util.Map.of("userId", userId, "count", count));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PostDto> getPost(@PathVariable String id){
         return postService.getPost(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());

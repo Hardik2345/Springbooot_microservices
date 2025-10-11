@@ -11,4 +11,5 @@ public interface IPostRepository {
     int insert(Post post);
     int update(Post post);
     int delete(String id);
+    int countByUserId(String userId);
 }

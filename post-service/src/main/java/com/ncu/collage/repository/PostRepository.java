@@ -70,4 +70,10 @@ public class PostRepository implements IPostRepository {
     public int delete(String id){
         return jdbc.update("DELETE FROM posts WHERE post_id= ?", id);
     }
+
+    @Override
+    public int countByUserId(String userId){
+        Integer count = jdbc.queryForObject("SELECT COUNT(*) FROM posts WHERE user_id = ?", Integer.class, userId);
+        return count == null ? 0 : count;
+    }
 }

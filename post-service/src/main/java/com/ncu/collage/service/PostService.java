@@ -75,6 +75,10 @@ public class PostService {
         return postRepository.delete(id) > 0;
     }
 
+    public int countPostsByUser(String userId){
+        return postRepository.countByUserId(userId);
+    }
+
     private void ensureUserExists(String userId){
         try {
             var response = restClient.get().uri(userServiceBaseUrl + "/users/" + userId).retrieve().toEntity(String.class);
