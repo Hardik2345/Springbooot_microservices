@@ -9,7 +9,14 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 public class ConfigurationserverApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConfigurationserverApplication.class, args);
+		String mode=System.getenv(name:"CONFIG_MODE")
+		SpringApplication application=new SpringApplication(ConfigurationserverApplication.class);
+		if("native".equalsIgnoreCase(mode)) {
+			System.setAdditionalProfiles("native");
+		} else {
+			System.setAdditionalProfiles("git");
+		}
+		application.run(args);
 	}
 
 }
