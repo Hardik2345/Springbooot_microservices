@@ -8,4 +8,6 @@
 /Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/model/Post.java
 /Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/repository/PostRepository.java
 /Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/repository/PostRowMapper.java
+/Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/security/SecurityConfig.java
+/Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/security/TrustedGatewayFilter.java
 /Users/hardik/Projects/microservices/post-service/src/main/java/com/ncu/collage/service/PostService.java

@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS auth_user (
+  id VARCHAR(36) PRIMARY KEY,
+  user_id VARCHAR(36) NOT NULL,
+  username VARCHAR(255) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  enabled BOOLEAN NOT NULL DEFAULT TRUE,
+  roles VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NULL,
+  updated_at TIMESTAMP NULL
+);
